@@ -62,11 +62,12 @@ const handleLogin=async(e)=>{
 		localStorage.setItem('token', token);
 		localStorage.setItem('role', userRole);
 		
-		console.log(userRole);
-		console.log(message)
+		// console.log(userRole);
+		// console.log(message)
 		
 		if (userRole === "admin") {
 			navigate('/admin'); // Admin-specific page
+			setMessage(message);
 		} 
 		else {
 			alert("Only Admin can access")
@@ -75,8 +76,8 @@ const handleLogin=async(e)=>{
 		setTimeout(() => {
 			setMessage('')
 		}, 1500);
-		setMessage(message);
-		} catch (error) {
+		} 
+		catch (error) {
 		if (error.response) {
 			setMessage(error.response.data.error);
 			document.getElementById('chk').checked = true;
