@@ -73,10 +73,12 @@ const handleLogin=async(e)=>{
 			alert("Only Admin can access")
 			setMessage("Sorry Access Denied")
 		}
-		setTimeout(() => {
-			setMessage('')
-		}, 1500);
-		} 
+	
+		// setTimeout(() => {
+		// 	setMessage('')
+		// }, 1500);
+		
+	} 
 		catch (error) {
 		if (error.response) {
 			setMessage(error.response.data.error);

@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+##### Overview
+The **Admin Panel** in the Client Feedback Management Portal provides a structured interface for administrators to manage and analyze client feedback effectively. Admins have access to a dashboard where they can view all submitted feedback, filter by categories, and respond to client concerns. Admins can also ### Generate reports,monitor real-time updates, and ensure smooth feedback processing for continuous business improvement.
+## Screenshots
+### Login Page [Admin id=> utkarshanikam9@gmail.com, pass 12345]
+![AdminLogin Page](Screenshots/Admn_Login.png)
+![Siginin Page](Screenshots/Signup.png)
+![Invalid Login Page](Screenshots/invalid.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Admin Panel
+![Admin Panel](Screenshots/DASHBOARD.png)
+![Admin Panel](Screenshots/AdminDashboard.png)
+![Admin Panel](Screenshots/AllReviews.png)
 
-## Available Scripts
+## Features
+- **Admin Panel**: Admins can review, analyze, and respond to feedback.
+- **Secure Authentication**: Uses JWT (JSON Web Tokens) for secure login.
+- **Database Integration**: Stores user and feedback data securely using MongoDB.
+- **Real-time Updates**: Provides live updates on submitted feedback.
+- **Responsive Design**: Ensures accessibility across all devices.
 
-In the project directory, you can run:
+## Unified Login System
+The system implements a **unified login mechanism**, allowing both **clients and administrators** to log in using a single authentication process. Based on their role (client or admin), users are redirected to their respective dashboards:
+- **Clients**: Can submit and track feedback.
+- **Admins**: Can view all feedback, analyze trends, and take necessary actions.
 
-### `npm start`
+## Tech Stack
+- **Frontend**: React.js
+- **Backend**: Express.js with Node.js
+- **Database**: MongoDB
+- **Authentication**: JWT for token-based authentication
+- **Styling**: Tailwind CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Folder Structure
+```
+Client-Feedback-Management/
+│── client/   # Frontend (React.js)
+│── admin/    # Admin panel
+│── server/   # Backend (Express.js, MongoDB)
+│── README.md # Documentation
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo.git
+   cd Client-Feedback-Management
+   ```
 
-### `npm test`
+2. Install dependencies for client, admin, and server:
+   ```sh
+   cd client
+   npm install
+   cd ../admin
+   npm install
+   cd ../server
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Set up environment variables in a `.env` file inside the `server/` folder:
+   ```env
+   MONGO_URI=your-mongodb-connection-string
+   JWT_SECRET=your-secret-key
+   ```
 
-### `npm run build`
+4. Start the server:
+   ```sh
+   cd server
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Start the frontend (client and admin):
+   ```sh
+   cd client
+   npm start
+   cd ../admin
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API Endpoints
+  | Method | Endpoint              | Description                   |
+  |--------|-----------------------|-------------------------------|
+  | POST   | `/api/auth/`loginUser | Login for admins               |
+  | POST   | `/api/auth/createUser`| Register a new client        |
+  | GET    | `/api/details`        | Retrieve all feedback (admin) |
+  | POST   | `/api/submitForm`     | Submit feedback (client)      |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Contribution
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
+MIT License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contact
+For any inquiries, contact [your email] or visit [your website].
