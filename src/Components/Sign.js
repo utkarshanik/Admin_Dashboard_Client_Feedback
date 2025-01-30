@@ -17,7 +17,7 @@ export default function Sign() {
 	  e.preventDefault();
 	  try {
 		// Make a POST request to the Express backend
-		const response = await axios.post(`${API_URL}api/auth/createUser`, {
+		const response = await axios.post(`${API_URL}/api/auth/createUser`, {
 		  name,
 		  email,
 		  password,
@@ -62,7 +62,7 @@ const handleLogin=async(e)=>{
 		localStorage.setItem('token', token);
 		localStorage.setItem('role', userRole);
 		
-		console.log(token);
+		console.log(userRole);
 		console.log(message)
 		
 		if (userRole === "admin") {
